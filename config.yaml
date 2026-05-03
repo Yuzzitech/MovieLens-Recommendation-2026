@@ -1,0 +1,52 @@
+# MovieLens Project Configuration
+
+# Data settings
+data:
+  directory: "data"
+  train_file: "train.csv"
+  test_file: "test.csv"
+  movies_file: "movies.csv"
+  tags_file: "tags.csv"
+  genome_scores_file: "genome_scores.csv"
+  genome_tags_file: "genome_tags.csv"
+
+# Rating range
+rating:
+  min: 0.5
+  max: 5.0
+  step: 0.5
+
+# Model settings
+model:
+  test_size: 0.2
+  random_state: 42
+  
+  # Collaborative Filtering
+  cf:
+    n_factors: 50
+    n_epochs: 20
+    learning_rate: 0.01
+    regularization: 0.01
+  
+  # Matrix Factorization (SVD)
+  svd:
+    n_factors: 50
+    
+  # Baseline
+  baseline:
+    damping: 5  # For regularization
+
+# Evaluation
+evaluation:
+  metric: "rmse"
+  cv_folds: 5
+
+# Submission
+submission:
+  directory: "submissions"
+  filename: "submission.csv"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
